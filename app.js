@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const connectDB = require('./config/db');
-const connectWSS = require('./config/connectWSS');
+// const connectWSS = require('./config/connectWSS');
 require('dotenv').config();
 
 connectDB();
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/logs', require('./routes/log'));
 
 const httpServer = http.createServer(app);
-connectWSS(httpServer, 5000);
+// connectWSS(httpServer, 5000);
 
 httpServer.listen(5000, () => {
   console.log(`Server started on port 5000`);

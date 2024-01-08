@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import './App.css';
-import WebSocketConnection from './WebSocket/WebSocket';
+//import TestBlock from './TestBlock/TestBlock';
+//import WebSocketConnection from './WebSocket/WebSocket';
 
 const App = () => {
+  const [text, setText] = useState('');
   const onClick = () => {
-    if (document.wss) {
-      document.wss.send(JSON.stringify({ getLogs: true }));
-    }
+    setText('Hello World');
+    setTimeout(() => {
+      setText('');
+    }, 3000);
   };
 
   return (
@@ -14,8 +18,10 @@ const App = () => {
         <button className='btn' onClick={onClick}>
           Get Logs
         </button>
-        <WebSocketConnection />
+        <div style={{ marginTop: '20px' }}>{text}</div>
+        {/* <WebSocketConnection /> */}
       </div>
+      {/* <TestBlock /> */}
     </div>
   );
 };

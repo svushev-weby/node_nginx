@@ -53,3 +53,17 @@ body {
   overflow-y: auto;
   max-height: 180px;
 }
+
+.iframeBlock {
+  width: 400px;
+  height: 400px;
+  overflow-y: auto;
+  background-color: beige;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 30px;
+}
+
+.iframeBlock span {
+  background-color: none !important;
+}
